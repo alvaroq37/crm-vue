@@ -12,6 +12,8 @@
     "lint:eslint": "eslint . --fix --cache"
   },
   "dependencies": {
+    "@formkit/themes": "^1.7.2",
+    "@formkit/vue": "^1.7.2",
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.27",
