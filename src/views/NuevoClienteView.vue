@@ -1,18 +1,34 @@
 <script setup>
+import ClienteService from "@/service/ClienteService";
+import { useRouter } from "vue-router";
 import { FormKit } from "@formkit/vue";
 import RouterLink from "@/components/UI/RouterLink.vue";
 import Heading from "@/components/UI/HeadingView.vue";
+
+const router = useRouter();
+
 defineProps({
   titulo: {
     type: String,
     required: true,
   },
 });
+
+const handleFormSubmit = (data) => {
+  ClienteService.addCliente(data)
+    .then(() => {
+      router.push({ name: "listado-clientes" });
+    })
+    .catch((error) => {
+      console.error("Hubo un error al agregar el cliente:", error);
+      alert("Hubo un error al agregar el cliente. Por favor, inténtalo de nuevo.");
+    });
+};
 </script>
 <template>
   <div>
     <div class="flex justify-end">
-      <RouterLink to="inicio">Volver</RouterLink>
+      <RouterLink to="listado-clientes">Volver</RouterLink>
     </div>
     <Heading>{{ titulo }}</Heading>
     <div class="mx-auto mt-10 bg-white shadow">
@@ -21,6 +37,7 @@ defineProps({
           type="form"
           submit-label="Agregar Cliente"
           incomplete-message="Por favor completa el formulario"
+          @submit="handleFormSubmit"
         >
           <FormKit
             type="text"

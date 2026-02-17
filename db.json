@@ -1,0 +1,44 @@
+{
+  "clientes": [
+    {
+      "id": "ee95",
+      "nombre": "ALVARO VICENTE ",
+      "apellido": "QUISPE ALCOCER",
+      "email": "alvaro_q23@hotmail.com",
+      "telefono": "76512285",
+      "empresa": "BANCON UNION S.A.",
+      "puesto": "ANALISTA DE DESARROLLO CORE",
+      "estado":1
+    },
+    {
+      "id": "397a",
+      "nombre": "LILY AIDEE",
+      "apellido": "ARIAS HUANCA",
+      "email": "larias69@gmail.com",
+      "telefono": "78542215",
+      "empresa": "PRENDAMAS S.A.",
+      "puesto": "CAJERA",
+      "estado":1
+    },
+    {
+      "id": "98ba",
+      "nombre": "NICOLE LISSETH",
+      "apellido": "GUTIERREZ ALI",
+      "email": "ngutierrez23@outlook.com",
+      "telefono": "75412258",
+      "empresa": "BANCO UNION S.A.",
+      "puesto": "ANALISTA DE CONTROL DE CALIDAD",
+      "estado":1
+    },
+    {
+      "id": "ee31",
+      "nombre": "MARISOL GABRIELA",
+      "apellido": "RIVERA PINNOLA",
+      "email": "magarivera@bancounion.com.bo",
+      "telefono": "85475521",
+      "empresa": "BANCO UNION S.A.",
+      "puesto": "OFICIAL DE PLATAFORMA",
+      "estado":0
+    }
+  ]
+}
