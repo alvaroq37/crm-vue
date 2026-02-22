@@ -8,9 +8,15 @@ export default {
     return api.post("/clientes", cliente);
   },
   updateCliente(id, cliente) {
-    return api.put(`/clientes/${id}`, cliente);
+    return api.patch(`/clientes/${id}`, cliente);
   },
   deleteCliente(id) {
     return api.delete(`/clientes/${id}`);
   },
+  getClienteById(id) {
+    return api.get(`/clientes/${id}`);
+  },
+  changeState(id, data){
+    return api.patch(`/clientes/${id}`, data);
+  }
 };

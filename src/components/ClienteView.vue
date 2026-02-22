@@ -7,6 +7,8 @@ const props = defineProps({
   },
 });
 
+defineEmits(["actualizar-estado", "eliminar-cliente"]);
+
 const nombreCompleto = computed(() => `${props.cliente.nombre} ${props.cliente.apellido}`);
 const estado = computed(() => (props.cliente.estado ? "Activo" : "Inactivo"));
 </script>
@@ -22,6 +24,7 @@ const estado = computed(() => (props.cliente.estado ? "Activo" : "Inactivo"));
     </td>
     <td class="whitespace-nowrap px-3 py-4 text-sm">
       <button
+        @click="$emit('actualizar-estado', {id: props.cliente.id, estado: props.cliente.estado})"
         class="inline-flex rounded-full px-2 text-xs font-semibold leading-5"
         :class="[
           estado === 'Activo'
@@ -33,10 +36,10 @@ const estado = computed(() => (props.cliente.estado ? "Activo" : "Inactivo"));
       </button>
     </td>
     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-      <RouterLink class="text-indigo-600 hover:text-indigo-900 mr-5" to="/editar-cliente"
+      <RouterLink class="text-indigo-600 hover:text-indigo-900 mr-5" :to="{ name: 'editar-cliente', params: { id: props.cliente.id } }"
         >Editar</RouterLink
       >
-      <button class="text-red-600 hover:text-red-900">Eliminar</button>
+      <button class="text-red-600 hover:text-red-900" @click="$emit('eliminar-cliente', props.cliente.id)">Eliminar</button>
     </td>
   </tr>
 </template>
